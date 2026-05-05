@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  body {
+    /* Premium Dark Mode background with soft text colors */
+    @apply bg-slate-900 text-slate-100 antialiased;
+    font-family: 'Inter', sans-serif; /* Modern Typography */
+  }
+}
+
+@layer components {
+  /* Glassmorphism aesthetic for modern, premium cards */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl rounded-2xl;
+  }
+  
+  /* Primary Interactive Button with Micro-animations */
+  .btn-primary {
+    @apply px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(79,70,229,0.4)] focus:ring-2 focus:ring-indigo-400 focus:outline-none;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg transition-all duration-200 border border-slate-700 focus:ring-2 focus:ring-slate-500 focus:outline-none;
+  }
+  
+  /* Premium Input Fields */
+  .input-field {
+    @apply w-full px-4 py-2 bg-slate-950/50 border border-slate-800 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200;
+  }
+}
+
+/* Custom Scrollbar for a polished look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a; 
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
+}
