@@ -10,8 +10,9 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   // 1. Create an Axios instance to talk to our Node.js backend
+  // It uses the environment variable in production, but defaults to localhost for local testing
   const api = axios.create({
-    baseURL: 'http://localhost:5000/api', // This points to your Express server
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api', 
   });
 
   // 2. Automatically attach the JWT token to every request we send
